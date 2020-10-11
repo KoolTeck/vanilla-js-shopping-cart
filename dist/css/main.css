@@ -1,6 +1,73 @@
-@import "./config";
-@import "./menu";
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+:root {
+  --primaryColor: #f09d51;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* --------------- Navbar ---------------- */
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #e7e2dd;
+  z-index: 1;
+}
+
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+
+/* --------------- End of Navbar ---------------- */
 html {
   scroll-behavior: smooth;
 }
@@ -10,13 +77,20 @@ body {
   background: var(--mainWhite);
   font-family: "Lato", sans-serif;
 }
+
 /* --------------- Hero ---------------- */
 .hero {
   min-height: calc(100vh - 60px);
   background: url("../images/hero-bcg.jpeg") center/cover no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .banner {
@@ -41,6 +115,7 @@ body {
   background: var(--primaryColor);
   color: var(--mainBlack);
   border: 1px solid var(--primaryColor);
+  -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
   cursor: pointer;
 }
@@ -52,7 +127,6 @@ body {
 
 /* --------------- End of Hero ---------------- */
 /* --------------- Products ---------------- */
-
 .products {
   padding: 4rem 0;
 }
@@ -69,8 +143,10 @@ body {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
 }
@@ -90,8 +166,10 @@ body {
   padding: 0.5rem 0.75rem;
   letter-spacing: var(--mainSpacing);
   font-weight: bold;
+  -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
-  transform: translateX(101%);
+  -webkit-transform: translateX(101%);
+          transform: translateX(101%);
   cursor: pointer;
 }
 
@@ -104,13 +182,15 @@ body {
 }
 
 .img-container:hover .bag-btn {
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .product-img {
   display: block;
   width: 100%;
   min-height: 12rem;
+  -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
 }
 
@@ -141,6 +221,7 @@ body {
   right: 0;
   width: 100%;
   height: 100%;
+  -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
   background: rgba(240, 157, 81, 0.5);
   z-index: 2;
@@ -155,14 +236,17 @@ body {
   height: 100%;
   overflow: scroll;
   z-index: 3;
-  background: rgb(231, 226, 221);
+  background: #e7e2dd;
   padding: 1.5rem;
+  -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
-  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .showCart {
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .transparentBcg {
@@ -190,9 +274,13 @@ body {
 
 /*---------- Cart Item -------------------- */
 .cart-item {
+  display: -ms-grid;
   display: grid;
-  align-items: center;
-  grid-template-columns: auto 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
   grid-column-gap: 1.5rem;
   margin: 1.5rem 0;
 }
@@ -229,7 +317,6 @@ body {
 }
 
 /*---------- End of Cart Item -------------------- */
-
 .cart-footer {
   margin-top: 2rem;
   letter-spacing: var(--mainSpacing);
@@ -242,3 +329,4 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+/*# sourceMappingURL=main.css.map */
